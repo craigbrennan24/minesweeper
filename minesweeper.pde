@@ -4,8 +4,7 @@ color tileColor = color( 0, 204, 255 );
 void setup()
 { 
    size( 1024, 800 );
-   Tile t = new Tile( width/2, height/2, 20 );
-   board.add(t);
+   setupTiles();
 }
 
 void draw()
@@ -24,12 +23,15 @@ void drawTiles()
 
 void setupTiles()
 {
-  
-  for( int i = 0; i < 100; i++ )
+  float size = 20;
+  float baseX = size/2;
+  float baseY = size/2;
+  for( int i = 0; i < 30; i++ )
   {
-    for( int j = 0; j < 100; j++ )
+    for( int j = 0; j < 30; j++ )
     {
-      Tile t = new Tile( 
+      Tile t = new Tile( baseX + (size*j), baseY + (size*i), size );
+      board.add(t);
     }
   }
 }
